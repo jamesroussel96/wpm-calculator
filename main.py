@@ -27,6 +27,7 @@ def counter_label(label):
             if counter == 18000:
                 display = "Press Start to Begin"
             else:
+                # increase timer on second intervals
                 tt = datetime.fromtimestamp(counter)
                 string = tt.strftime("%H:%M:%S")
                 display = string
@@ -60,6 +61,7 @@ def Start(label):
                               'egestas. Sed eleifend lorem ''id erat'' aliquet ''sollicitudin. Maecenas sed ' \
                               'faucibus dui. ''Praesent vel tempus ''mauris.':
             global counter
+            # words per minute calculation. static number of words to compare to.
             words_per_minute = 39 / second_counter * 60
             wpm = Label(window, text='WPM:' + str(words_per_minute), font=('Times New Roman', 28))
             wpm_window = canvas.create_window(400, 0, anchor='nw', window=wpm)
